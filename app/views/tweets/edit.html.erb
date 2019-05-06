@@ -1,0 +1,12 @@
+<%= form_tag("/tweets/#{@tweet.id}", method: :patch) do %>
+  <div class="field">
+    <label for="post_text">Text</label>
+    <textarea name="text" id="post_text">
+    <%= @tweet.contents %>
+  </textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Post" data-disable-with="Update Post" />
+  </div>
+<% end %>

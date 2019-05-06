@@ -18,11 +18,15 @@
   <body>
     <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">Blog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/tweets/new">New</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "New", new_tweet_path, :class => 'post' %></li>
+          <li><%= link_to "Sign_Out", destroy_user_session_path, method: :delete%></li>
+        <% else %>
+          <li><%= link_to "Sign_In", new_user_session_path, :class => 'post' %></li>
+          <li><%= link_to "Sign_Up", new_user_registration_path, :class => 'post' %></li>
+        <% end %>
       </ul>
     </div>
   </nav>

@@ -1,0 +1,10 @@
+<%= form_tag('/tweets', method: :post) do %>
+  <div class="field">
+    <label for="post_text">Text</label>
+    <textarea name="text" id="post_text"></textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Post" data-disable-with="Create Post" />
+  </div>
+<% end %>

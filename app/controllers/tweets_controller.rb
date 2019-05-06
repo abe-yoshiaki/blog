@@ -14,6 +14,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy if tweet.user_id == current_user.id
+    redirect_to action: :index
   end
 
   def edit
